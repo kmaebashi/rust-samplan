@@ -1,0 +1,193 @@
+# samplanサンプルプログラム
+var hoge int := 10 + 5;
+print("hoge.." + hoge);
+var piyo real := 20.123;
+print("piyo.." + piyo);
+print("piyo * 2.." + (piyo * 2));
+print("hoge + piyo * 2.." + (hoge + piyo * 2));
+var result real := (hoge + piyo * 2) / 3 - (2 + 1);
+
+var str string := "なんとか";
+
+print("result.." + result);
+print("-result.." + -result);
+
+var addResult real := add(0.1, 0.2);
+print("addResult.." + addResult);
+
+function add(a real, b real) real {
+  return a + b;
+}
+
+print("add(3, 2).." + add(3, 2));
+
+function add2(a real, b real) {
+  print("result.." + (a + b));
+}
+
+add2(10, 5);
+
+print("hoge.." + hoge + ", piyo.." + piyo);
+
+if hoge > piyo {
+  print("ここは通らない");
+} else {
+  print("ここが通る");
+}
+
+if hoge > piyo {
+  print("ここは通らない");
+} elsif  3 < 5 {
+  print("ここが通る");
+} else {
+  print("ここは通らない");
+}
+
+var i int:= 0;
+while i < 10 {
+  print("i.." + i);
+  ++i;
+}
+
+function sum(value int) int {
+  var i2 int := 0;
+  var sum int := 0;
+
+  while (i2 <= value) {
+    sum := sum + i2;
+    ++i2;
+  }
+
+  return sum;
+
+  print("ここは実行されない");
+}
+
+print("sum(10).." + sum(10));
+
+var assign1 int;
+var assign2 int;
+var assign3 int;
+
+assign1 := assign2 := assign3 := 123;
+
+print("assign1.." + assign1);
+print("assign2.." + assign2);
+print("assign3.." + assign3);
+
+print("比較演算子のテスト");
+
+if 3 = 2 {
+  print("ここは通らない");
+}
+if 3 != 2 {
+  print("ここは通る1");
+}
+if 3 > 2 {
+  print("ここは通る2");
+}
+if 3 < 2 {
+  print("ここは通らない");
+}
+if 3 >= 2 {
+  print("ここは通る3");
+}
+if 3 <= 2 {
+  print("ここは通らない");
+}
+
+if 3 = 2.0 {
+  print("ここは通らない");
+}
+if 3.0 != 2.0 {
+  print("ここは通る4");
+}
+if 3 > 2.0 {
+  print("ここは通る5");
+}
+if 3 < 2.0 {
+  print("ここは通らない");
+}
+if 3.0 >= 2 {
+  print("ここは通る6");
+}
+if 3.0 <= 2 {
+  print("ここは通らない");
+}
+
+if "abc" = "abc" {
+  print("ここは通る7");
+}
+if "abc" = "bcd" {
+  print("ここは通らない");
+}
+if "abc" != "bcd" {
+  print("ここは通る8");
+}
+if "abc" < "bcd" {
+  print("ここは通る9");
+}
+if "abc" > "bcd" {
+  print("ここは通らない");
+}
+if "abc" <= "bcd" {
+  print("ここは通る10");
+}
+if "abc" >= "bcd" {
+  print("ここは通らない");
+}
+
+print("&&のテスト");
+if 3 > 2 && 4 > 3 {
+  print("ここは通る1");
+}
+if 3 > 2 && 4 < 3 {
+  print("ここは通らない");
+}
+if 3 < 2 && 4 > 3 {
+  print("ここは通らない");
+}
+if 3 < 2 && 4 < 3 {
+  print("ここは通らない");
+}
+
+print("||のテスト");
+if 3 > 2 || 4 > 3 {
+  print("ここは通る1");
+}
+if 3 > 2 || 4 < 3 {
+  print("ここは通る2");
+}
+if 3 < 2 || 4 > 3 {
+  print("ここは通る3");
+}
+if 3 < 2 || 4 < 3 {
+  print("ここは通らない");
+}
+
+var aa int := 0;
+if aa = 0 {
+  print("aは0だよ!");
+} elsif aa = 1 {
+  print("aは1だよ!");
+} else {
+  print("aは0でも1でもないよ!");
+}
+
+scope(0);
+
+function scope(arg int) {
+  var v1 int := 1;
+
+  if (true) {
+    var v2 int := 3;
+    print("v2.." + v2);
+  }
+
+  if (true) {
+    var v2 int := 5;
+    print("v2.." + v2);
+  }
+  return;
+  print("ここは実行されない");
+}
